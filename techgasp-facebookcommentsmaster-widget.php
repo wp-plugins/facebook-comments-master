@@ -69,7 +69,8 @@ class techgasp_facebookcommentsmaster_widget extends WP_Widget {
 	$instance = wp_parse_args( (array) $instance, $defaults );
 	?>
 		<b>Check the buttons to be displayed:</b>
-	<p>Hide Widget Title. Upgrade to Advanced Version.</p>
+	<hr>
+	<p><b>Hide Widget Title. Upgrade to Advanced Version.</b></p>
 	<hr>
 	<p>
 	<input type="checkbox" <?php checked( (bool) $instance['show_facebookcomments'], true ); ?> id="<?php echo $this->get_field_id( 'show_facebookcomments' ); ?>" name="<?php echo $this->get_field_name( 'show_facebookcomments' ); ?>" />
@@ -107,9 +108,9 @@ class techgasp_facebookcommentsmaster_widget extends WP_Widget {
 	<p><b>To moderate comments use the link</b></p>
 	<p>https://developers.facebook.com/tools/comments</p>
 	<hr>
-	<p>Activate Mobile Optimize Version. Upgrade to Advanced Version.</p>
+	<p><b>Activate Mobile Optimize Version. Upgrade to Advanced Version.</b></p>
 	<hr>
-	<p>Shortcode Framework. Upgrade to Advanced Version.</p>
+	<p><b>Shortcode Framework. Upgrade to Advanced Version.</b></p>
 	<hr>
 	<p><b>Facebook Comments Master Lite Version</b></p>
 	<p>Upgrade and get all features and support! Display or hide Widget Title - Display or hide Facebook Comments - Number of comments to display - Plugin Width - Facebook Application Ready - Facebook Comments Moderation Ready - Facebook Mobile Optimized version Ready - Facebook Color Scheme (light or dark) - Shortcode Framework. Publish widget inside pages and posts.</p>
