@@ -49,8 +49,8 @@
 <p>Copy and Paste this shortcode inside your pages or posts [facebookcommentsmaster id=xx] replace xx with your sidebar number, ie [facebookcommentsmaster id=sidebar-1]</p>
 <p><a class="button-primary" href="widgets.php" title="Widgets Page">To Widgets Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="More Help">More Help</a> <a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Advanced Version">Facebook Comments Master Advanced Version</a></p>
 <hr>
-<p><h3>Facebook Comments Master Advanced Version:</h3></p>
-<p>Upgrade for full features and support! Display or hide Widget Title - Display or hide Facebook Comments - Number of comments to display - Plugin Width - Facebook Application Ready - Facebook Comments Moderation Ready - Facebook Mobile Optimized version Ready - Facebook Color Scheme (light or dark) - Shortcode Framework. Publish widget inside pages and posts.</p>
+<p><h3>Facebook Comments Master Lite Version:</h3></p>
+<p>Upgrade and get all features and support! Display or hide Widget Title - Display or hide Facebook Comments - Number of comments to display - Plugin Width - Facebook Application Ready - Facebook Comments Moderation Ready - Facebook Mobile Optimized version Ready - Facebook Color Scheme (light or dark) - Shortcode Framework. Publish widget inside pages and posts.</p>
 <p><a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Advanced Version">Facebook Comments Master Advanced Version</a></p>
 </form>
 </div>

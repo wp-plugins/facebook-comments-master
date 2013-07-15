@@ -22,8 +22,10 @@ class techgasp_facebookcommentsmaster_widget extends WP_Widget {
 		$title = isset( $instance['title'] ) ? $instance['title'] :false;
 		$facebookcommentsspacer ="'";
 		@$fburibase = site_url( $path, $scheme );
-		@$fburicurrent = get_page_uri( $page_id );
+		@$fburicurrent = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 		$show_facebookcomments = isset( $instance['show_facebookcomments'] ) ? $instance['show_facebookcomments'] :false;
+		$facebookcomments_appid = $instance['facebookcomments_appid'];
+		$facebookcomments_userid = $instance['facebookcomments_userid'];
 		$facebookcomments_posts = $instance['facebookcomments_posts'];
 		$facebookcomments_width = $instance['facebookcomments_width'];
 		$facebookcomments_color = $instance['facebookcomments_color'];
@@ -34,7 +36,9 @@ class techgasp_facebookcommentsmaster_widget extends WP_Widget {
 		echo $before_title . $name . $after_title;
 	//Display Faceboook Comments
 		if ( $show_facebookcomments )
-		echo '<div id="fb-root"></div>' .
+		echo '<meta property="fb:admins" content="{'.$facebookcomments_userid.'}"/>' .
+			'<meta property="fb:app_id" content="{'.$facebookcomments_appid.'}"/>' .
+			'<div id="fb-root"></div>' .
 			'<script>(function(d, s, id) {' .
 			'var js, fjs = d.getElementsByTagName(s)[0];' .
 			'if (d.getElementById(id)) return;' .
@@ -42,7 +46,7 @@ class techgasp_facebookcommentsmaster_widget extends WP_Widget {
 			'js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";' .
 			'fjs.parentNode.insertBefore(js, fjs);' .
 			'}(document, '.$facebookcommentsspacer.'script'.$facebookcommentsspacer.', '.$facebookcommentsspacer.'facebook-jssdk'.$facebookcommentsspacer.'));</script>' .
-			'<div class="fb-comments" data-href="'.$fburibase.'/'.$fburicurrent.'" data-width="'.$facebookcomments_width.'" data-num-posts="'.$facebookcomments_posts.'" data-colorscheme="'.$facebookcomments_color.'"></div>';
+			'<div class="fb-comments" data-href="'.$fburicurrent.'" data-width="'.$facebookcomments_width.'" data-num-posts="'.$facebookcomments_posts.'" data-colorscheme="'.$facebookcomments_color.'" data-mobile="auto-detect"></div>';
 	echo $after_widget;
 	}
 	//Update the widget
@@ -52,6 +56,8 @@ class techgasp_facebookcommentsmaster_widget extends WP_Widget {
 		$instance['name'] = strip_tags( $new_instance['name'] );
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$instance['show_facebookcomments'] = $new_instance['show_facebookcomments'];
+		$instance['facebookcomments_appid'] = $new_instance['facebookcomments_appid'];
+		$instance['facebookcomments_userid'] = $new_instance['facebookcomments_userid'];
 		$instance['facebookcomments_posts'] = $new_instance['facebookcomments_posts'];
 		$instance['facebookcomments_width'] = $new_instance['facebookcomments_width'];
 		$instance['facebookcomments_color'] = $new_instance['facebookcomments_color'];
@@ -59,10 +65,12 @@ class techgasp_facebookcommentsmaster_widget extends WP_Widget {
 	}
 	function form( $instance ) {
 	//Set up some default widget settings.
-	$defaults = array( 'name' => __('Facebook Comments Master', 'facebook comments master'), 'title' => true, 'show_facebookcomments' => false, 'facebookcomments_posts' => false, 'facebookcomments_width' => false, 'facebookcomments_color' => false );
+	$defaults = array( 'name' => __('Facebook Comments Master', 'facebook comments master'), 'title' => true, 'show_facebookcomments' => false, 'facebookcomments_appid' => false, 'facebookcomments_userid' => false, 'facebookcomments_posts' => false, 'facebookcomments_width' => false, 'facebookcomments_color' => false );
 	$instance = wp_parse_args( (array) $instance, $defaults );
 	?>
 		<b>Check the buttons to be displayed:</b>
+	<p>Hide Widget Title. Upgrade to Advanced Version.</p>
+	<hr>
 	<p>
 	<input type="checkbox" <?php checked( (bool) $instance['show_facebookcomments'], true ); ?> id="<?php echo $this->get_field_id( 'show_facebookcomments' ); ?>" name="<?php echo $this->get_field_name( 'show_facebookcomments' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'show_facebookcomments' ); ?>"><b><?php _e('Display Facebook Comments', 'facebook comments master'); ?></b></label></br>
@@ -83,14 +91,28 @@ class techgasp_facebookcommentsmaster_widget extends WP_Widget {
 	</p>
 	<p>Facebook Color Scheme: <b>light</b> or <b>dark</b></p>
 	<hr>
-	<p><b>Moderation Tools</b></p>
-	<p>Advanced Version Only!</p>
+	<p><b>Moderation Tools (optional)</b></p>
+	<p>
+	<label for="<?php echo $this->get_field_id( 'facebookcomments_appid' ); ?>"><?php _e('Facebook Application ID:', 'facebook comments master'); ?></label></br>
+	<input id="<?php echo $this->get_field_id( 'facebookcomments_appid' ); ?>" name="<?php echo $this->get_field_name( 'facebookcomments_appid' ); ?>" value="<?php echo $instance['facebookcomments_appid']; ?>" style="width:auto;" />
+	</p>
+	<p>Insert your Facebook Application ID number</p>
+	<p>
+	<label for="<?php echo $this->get_field_id( 'facebookcomments_userid' ); ?>"><?php _e('Facebook User ID:', 'facebook comments master'); ?></label></br>
+	<input id="<?php echo $this->get_field_id( 'facebookcomments_userid' ); ?>" name="<?php echo $this->get_field_name( 'facebookcomments_userid' ); ?>" value="<?php echo $instance['facebookcomments_userid']; ?>" style="width:auto;" />
+	</p>
+	<p>Insert Facebook Moderator User ID. To check your Facebook User ID navigate to:</p>
+	<p>http://graph.facebook.com/username</p>
+	<p>(replace username with your facebook username)</p>
+	<p><b>To moderate comments use the link</b></p>
+	<p>https://developers.facebook.com/tools/comments</p>
 	<hr>
-	<p><b>Mobile Optimized Version</b></p>
-	<p>Advanced Version Only!</p>
+	<p>Activate Mobile Optimize Version. Upgrade to Advanced Version.</p>
 	<hr>
-	<p><b>Facebook Comments Master Advanced Version</b></p>
-	<p>Upgrade for full features and support! Display or hide Widget Title - Display or hide Facebook Comments - Number of comments to display - Plugin Width - Facebook Application Ready - Facebook Comments Moderation Ready - Facebook Mobile Optimized version Ready - Facebook Color Scheme (light or dark) - Shortcode Framework. Publish widget inside pages and posts.</p>
+	<p>Shortcode Framework. Upgrade to Advanced Version.</p>
+	<hr>
+	<p><b>Facebook Comments Master Lite Version</b></p>
+	<p>Upgrade and get all features and support! Display or hide Widget Title - Display or hide Facebook Comments - Number of comments to display - Plugin Width - Facebook Application Ready - Facebook Comments Moderation Ready - Facebook Mobile Optimized version Ready - Facebook Color Scheme (light or dark) - Shortcode Framework. Publish widget inside pages and posts.</p>
 	<p><a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Advanced Version">Facebook Comments Master Advanced Version</a></p>
 	<?php
 	}
