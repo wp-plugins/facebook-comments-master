@@ -2,7 +2,7 @@
 /**
 Plugin Name: Facebook Comments Master
 Plugin URI: http://wordpress.techgasp.com/facebook-comments-master/
-Version: 2.1
+Version: 2.2
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: facebook-comments-master
@@ -32,7 +32,11 @@ define('TECHGASP_FACEBOOKCOMMENTSMASTER_ID', 'facebook-comments-master-options')
 // DEFINE PLUGIN NICK
 define('TECHGASP_FACEBOOKCOMMENTSMASTER_NICK', 'Faceboook Comments Master');
 
+// HOOK WIDGET
 require_once('techgasp-facebookcommentsmaster-widget.php');
+
+// HOOK INVITATION
+require_once('techgasp-facebookcommentsmaster-invite.php');
 
     class techgasp_facebookcommentsmaster
     {
@@ -97,7 +101,7 @@ require_once('techgasp-facebookcommentsmaster-widget.php');
 		*/
 		public static function content_with_quote($content)
 		{
-			$quote = '<p><blockquote>' . get_option('tsm_quote') . '</blockquote></p>';
+			$quote = '<p>' . get_option('tsm_quote') . '</p>';
 			return $content . $quote;
 		}
 		
