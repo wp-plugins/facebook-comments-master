@@ -2,7 +2,7 @@
 /**
 Plugin Name: Facebook Comments Master
 Plugin URI: http://wordpress.techgasp.com/facebook-comments-master/
-Version: 2.2
+Version: 2.3
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: facebook-comments-master
@@ -106,7 +106,7 @@ require_once('techgasp-facebookcommentsmaster-invite.php');
 		}
 		
 		// Add settings link on plugin page
-		public function techgasp_facebookcommentsmaster_link($links, $file) {
+		public static function techgasp_facebookcommentsmaster_link($links, $file) {
 		static $this_plugin;
 		if (!$this_plugin) $this_plugin = plugin_basename(__FILE__);
 		if ($file == $this_plugin){
