@@ -2,7 +2,7 @@
 /**
 Plugin Name: Facebook Comments Master
 Plugin URI: http://wordpress.techgasp.com/facebook-comments-master/
-Version: 4.0
+Version: 4.0.1
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: facebook-comments-master
@@ -34,22 +34,13 @@ define('FACEBOOK_COMMENTS_MASTER_ID', 'facebook-comments-master');
 define('FACEBOOK_COMMENTS_MASTER_NICK', 'Facebook Comments Master');
 
 // HOOK WIDGET
-require_once('includes/facebook-comments-master-widget.php');
+require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-widget.php');
 
 // HOOK INVITATION
 
 // HOOK SHORTCODE
 
 	class facebook_comments_master{
-		/** function/method
-		* Usage: return absolute file path
-		* Arg(1): string
-		* Return: string
-		*/
-		public static function file_path($file)
-		{
-			return ABSPATH.'wp-content/plugins/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)).$file;
-		}
 		/** function/method
 		* Usage: hooking the plugin options/settings
 		* Arg(0): null
@@ -83,18 +74,18 @@ require_once('includes/facebook-comments-master-widget.php');
 			}
 			$plugin_id = FACEBOOK_COMMENTS_MASTER_ID;
 			// display options page
-			include(self::file_path('includes/facebook-comments-master-admin.php'));
+			include( dirname( __FILE__ ) . '/includes/facebook-comments-master-admin.php');
 		}
 		/** function/method
-                * Usage: show options/settings form page
-                * Arg(0): null
-                * Return: void
-                */
+		* Usage: show options/settings form page
+		* Arg(0): null
+		* Return: void
+		*/
 		 public static function facebook_comments_master_widget()
-                {
-                        // display widget page
-                        include(self::file_path('includes/facebook-comments-master-widget.php'));
-                }
+		{
+			// display widget page
+				include( dirname( __FILE__ ) . '/includes/facebook-comments-master-widget.php');
+		}
 		/** function/method
 		* Usage: filtering the content
 		* Arg(1): string
@@ -121,7 +112,6 @@ require_once('includes/facebook-comments-master-widget.php');
 		{
 		add_action('admin_init', array('facebook_comments_master', 'facebook_comments_master_register'));
 		add_action('admin_menu', array('facebook_comments_master', 'menu'));
-		
 		}
 	add_filter('the_content', array('facebook_comments_master', 'content_with_quote'));
 endif;
