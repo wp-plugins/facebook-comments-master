@@ -60,6 +60,7 @@ class facebook_comments_master_widget extends WP_Widget {
 	$defaults = array( 'name' => __('Facebook Comments Master', 'facebook_comments_master'), 'title' => true, 'show_facebookcomments' => false, 'facebookcomments_appid' => false, 'facebookcomments_userid' => false, 'facebookcomments_posts' => false, 'facebookcomments_width' => false, 'facebookcomments_color' => false, 'show_facebookcomments_mobile' => true );
 	$instance = wp_parse_args( (array) $instance, $defaults );
 	?>
+		<br>
 		<b>Check the buttons to be displayed:</b>
 	<p>
 	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
@@ -111,16 +112,25 @@ class facebook_comments_master_widget extends WP_Widget {
 		<p>
 		<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; width:16px; vertical-align:middle;" />
 		&nbsp;
-		<b>Facebook Comments Master Website</b>
+		<b>Shortcode Framework</b>
 		</p>
-		<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Facebook Comments Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master">Advanced Version</a></p>
+		<div class="description">The shortcode framework allows you to insert Facebook Comments Master inside Pages & Posts without the need of extra plugins or gimmicks. Fast page load times and top SEO. Only available in advanced version.</div>
+	<br>
 <div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
-		<p>
-		<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; width:16px; vertical-align:middle;" />
-		&nbsp;
-		<b>Advanced Version Updater:</b>
-		</p>
-		<div class="description">The advanced version updater allows to automatically update your advanced plugin. Only available in advanced version.</div>
+	<p>
+	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; width:16px; vertical-align:middle;" />
+	&nbsp;
+	<b>Facebook Comments Master Website</b>
+	</p>
+	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Facebook Comments Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master">Adv. Version</a></p>
+<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+	<p>
+	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; width:16px; vertical-align:middle;" />
+	&nbsp;
+	<b>Advanced Version Updater:</b>
+	</p>
+	<div class="description">The advanced version updater allows to automatically update your advanced plugin. Only available in advanced version.</div>
+	<br>
 	<?php
 	}
  }
