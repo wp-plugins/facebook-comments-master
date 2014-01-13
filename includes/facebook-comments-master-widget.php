@@ -8,7 +8,8 @@ register_widget( 'facebook_comments_master_widget' );
 add_action( 'wp_enqueue_scripts', 'facebook_comments_master_wcss' );
 //load css for shortcode
 function facebook_comments_master_wcss() {
-	wp_enqueue_style( 'prefix-style', plugins_url('facebook-comments-master-style.css', __FILE__) );
+	wp_register_style( 'facebook_comments_master_wcss', plugins_url('facebook-comments-master-style.css', __FILE__) );
+	wp_enqueue_style( 'facebook_comments_master_wcss' );
 }
 class facebook_comments_master_widget extends WP_Widget {
 	function facebook_comments_master_widget() {

@@ -3,7 +3,7 @@ Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, facebook, comments, facebook plugin, facebook comments, wordpress comments, website comments, facebook share
 Requires at least: 3.5
 Tested up to: 3.8
-Stable tag: 4.1.1
+Stable tag: 4.2
 License: GPLv2 or later
 
 Facebook Comments Master is the professional integration of facebook comments into heavy duty wordpress websites.
@@ -18,6 +18,8 @@ But wait! the best part is that it turns your website viral because all comments
 
 Main Features: Light as a feather that turns your website facebook viral - Incredible fast loading times with html5, code totally new - Also accepts Yahoo, Hotmail and AOL accounts to post and comment - Uses new facebook api - Improved Moderation Settings - Optimized Facebook Mobile Support Added - Facebook Application Connection - Control the Number of posts to display - Control the Plugin Width to fit your template - Facebook Color Scheme (Light / Dark) - Shortcode Framework ready, to publish inside pages and posts
 
+Both the widget and the shortcode framework are fully mobile responsive, a must for any professional website
+
 **Facebook Comments Master is all about gain and viral**
 
 IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
@@ -27,7 +29,7 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 * Display or hide Facebook Comments
 * Number of comments to display
-* Plugin Width
+* Mobile Responsive Ready!
 * Facebook Color Scheme (light or dark)
 
 **ADVANCED Version Contains:**
@@ -35,9 +37,9 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 * Display or hide Widget Title
 * Display or hide Facebook Comments
 * Number of comments to display
-* Plugin Width
 * Facebook Application Ready
 * Facebook Comments Moderation Ready
+* Mobile Responsive Ready!
 * Facebook Mobile Optimized version Ready
 * Facebook Color Scheme (light or dark)
 * Shortcode Framework v2. Publish widget inside pages and posts
@@ -102,6 +104,11 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 
 == Changelog ==
+
+= 4.2 =
+* Widget functions
+* Adding Style
+* Adding index.php SEC
 
 = 4.1.1 =
 * Minor tweaks regarding responsiveness in newer mobile
