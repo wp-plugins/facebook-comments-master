@@ -2,7 +2,7 @@
 /**
 Plugin Name: Facebook Comments Master
 Plugin URI: http://wordpress.techgasp.com/facebook-comments-master/
-Version: 4.2
+Version: 4.3
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: facebook-comments-master
@@ -24,95 +24,92 @@ License: GPL2 or later
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-
 if(!class_exists('facebook_comments_master')) :
-
-// DEFINE PLUGIN ID
+///////DEFINE ID//////
 define('FACEBOOK_COMMENTS_MASTER_ID', 'facebook-comments-master');
+///////DEFINE VERSION///////
+define( 'facebook_comments_master_VERSION', '4.3' );
+global $facebook_comments_master_version, $facebook_comments_master_name;
+$facebook_comments_master_version = "4.3"; //for other pages
+$facebook_comments_master_name = "Facebook Comments Master"; //pretty name
+if( is_multisite() ) {
+update_site_option( 'facebook_comments_master_installed_version', $facebook_comments_master_version );
+update_site_option( 'facebook_comments_master_name', $facebook_comments_master_name );
+}
+else{
+update_option( 'facebook_comments_master_installed_version', $facebook_comments_master_version );
+update_option( 'facebook_comments_master_name', $facebook_comments_master_name );
+}
+// HOOK ADMIN
+require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-admin.php');
+// HOOK ADMIN IN & UN SHORTCODE
+require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-admin-shortcodes.php');
+// HOOK ADMIN WIDGETS
+require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-admin-widgets.php');
+// HOOK ADMIN ADDONS
+require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-admin-addons.php');
+// HOOK ADMIN UPDATER
+require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-admin-updater.php');
+// HOOK WIDGET VIRAL
+require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-widget-viral.php');
+// HOOK WIDGET BASIC
+require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-widget-basic.php');
 
-// DEFINE PLUGIN NICK
-define('FACEBOOK_COMMENTS_MASTER_NICK', 'Facebook Comments Master');
 
-// HOOK WIDGET
-require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-widget.php');
-
-// HOOK INVITATION
-
-// HOOK SHORTCODE
-
-	class facebook_comments_master{
-		/** function/method
-		* Usage: hooking the plugin options/settings
-		* Arg(0): null
-		* Return: void
-		*/
-		public static function facebook_comments_master_register()
-		{
-			register_setting(FACEBOOK_COMMENTS_MASTER_ID, 'tsm_quote');
-		}
-		/** function/method
-		* Usage: hooking (registering) the plugin menu
-		* Arg(0): null
-		* Return: void
-		*/
-		public static function menu()
-		{
-			// Create menu tab
-			add_options_page(FACEBOOK_COMMENTS_MASTER_NICK.' Plugin Options', FACEBOOK_COMMENTS_MASTER_NICK, 'manage_options', FACEBOOK_COMMENTS_MASTER_ID.'-admin', array('facebook_comments_master', 'options_page'));
-			add_filter( 'plugin_action_links', array('facebook_comments_master', 'facebook_comments_master_link'), 10, 2 );
-		}
-		/** function/method
-		* Usage: show options/settings form page
-		* Arg(0): null
-		* Return: void
-		*/
-		public static function options_page()
-		{
-			if (!current_user_can('manage_options'))
-			{
-				wp_die( __('You do not have sufficient permissions to access this page.') );
-			}
-			$plugin_id = FACEBOOK_COMMENTS_MASTER_ID;
-			// display options page
-			include( dirname( __FILE__ ) . '/includes/facebook-comments-master-admin.php');
-		}
-		/** function/method
-		* Usage: show options/settings form page
-		* Arg(0): null
-		* Return: void
-		*/
-		 public static function facebook_comments_master_widget()
-		{
-			// display widget page
-				include( dirname( __FILE__ ) . '/includes/facebook-comments-master-widget.php');
-		}
-		/** function/method
-		* Usage: filtering the content
-		* Arg(1): string
-		* Return: string
-		*/
-		public static function content_with_quote($content)
-		{
-			$quote = '<p>' . get_option('tsm_quote') . '</p>';
-			return $content . $quote;
-		}
-		// Add settings link on plugin page
-		public static function facebook_comments_master_link($links, $file) {
-			static $this_plugin;
-			if (!$this_plugin) $this_plugin = plugin_basename(__FILE__);
-			if ($file == $this_plugin){
-				$settings_link = '<a href="' . admin_url( 'options-general.php?page='.FACEBOOK_COMMENTS_MASTER_ID).'-admin' . '">' . __( 'Settings' ) . '</a>';
-				array_unshift($links, $settings_link);
-			}
-		return $links;
-		}
-		// Advanced Updater
+class facebook_comments_master{
+//REGISTER PLUGIN
+public static function facebook_comments_master_register(){
+register_setting(FACEBOOK_COMMENTS_MASTER_ID, 'tsm_quote');
+}
+public static function content_with_quote($content){
+$quote = '<p>' . get_option('tsm_quote') . '</p>';
+	return $content . $quote;
+}
+//SETTINGS LINK IN PLUGIN MANAGER
+public static function facebook_comments_master_links( $links, $file ) {
+	if ( $file == plugin_basename( dirname(__FILE__).'/facebook-comments-master.php' ) ) {
+		$links[] = '<a href="' . admin_url( 'admin.php?page=facebook-comments-master' ) . '">'.__( 'Settings' ).'</a>';
 	}
-	if ( is_admin() )
-		{
-		add_action('admin_init', array('facebook_comments_master', 'facebook_comments_master_register'));
-		add_action('admin_menu', array('facebook_comments_master', 'menu'));
-		}
-	add_filter('the_content', array('facebook_comments_master', 'content_with_quote'));
+
+	return $links;
+}
+
+public static function facebook_comments_master_updater_version_check(){
+global $facebook_comments_master_version;
+//CHECK NEW VERSION
+$facebook_comments_master_slug = basename(dirname(__FILE__));
+$current = get_site_transient( 'update_plugins' );
+$facebook_comments_plugin_slug = $facebook_comments_master_slug.'/'.$facebook_comments_master_slug.'.php';
+@$r = $current->response[ $facebook_comments_plugin_slug ];
+if (empty($r)){
+$r = false;
+$facebook_comments_plugin_slug = false;
+if( is_multisite() ) {
+update_site_option( 'facebook_comments_master_newest_version', $facebook_comments_master_version );
+}
+else{
+update_option( 'facebook_comments_master_newest_version', $facebook_comments_master_version );
+}
+}
+if (!empty($r)){
+$facebook_comments_plugin_slug = $facebook_comments_master_slug.'/'.$facebook_comments_master_slug.'.php';
+@$r = $current->response[ $facebook_comments_plugin_slug ];
+if( is_multisite() ) {
+update_site_option( 'facebook_comments_master_newest_version', $r->new_version );
+}
+else{
+update_option( 'facebook_comments_master_newest_version', $r->new_version );
+}
+}
+}
+		// Advanced Updater
+
+//END CLASS
+}
+if ( is_admin() ){
+	add_action('admin_init', array('facebook_comments_master', 'facebook_comments_master_register'));
+	add_action('init', array('facebook_comments_master', 'facebook_comments_master_updater_version_check'));
+}
+add_filter('the_content', array('facebook_comments_master', 'content_with_quote'));
+add_filter( 'plugin_action_links', array('facebook_comments_master', 'facebook_comments_master_links'), 10, 2 );
 endif;
-?>
