@@ -2,8 +2,8 @@
 Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, facebook, comments, facebook plugin, facebook comments, wordpress comments, website comments, facebook share
 Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 4.3.5
+Tested up to: 3.9
+Stable tag: 4.3.7
 License: GPLv2 or later
 
 Facebook Comments Master is the professional integration of facebook comments into heavy duty wordpress websites.
@@ -16,7 +16,7 @@ Let facebook take all the load of the comments, moderation and spam (you can ult
 
 But wait! the best part is that it turns your website viral because all comments are also posted in the user facebook wall referencing your website and with a thumb image. And if by any really strange chance your users do not have a facebook account? Problem solved, they can use their Yahoo, Hotmail or AOL accounts to post and comment. It's all gain, gain, gain.
 
-Main Features: Light as a feather that turns your website facebook viral - Incredible fast loading times with html5, code totally new - Also accepts Yahoo, Hotmail and AOL accounts to post and comment - Uses new facebook api - Improved Moderation Settings - Optimized Facebook Mobile Support Added - Facebook Application Connection - Control the Number of posts to display - Control the Plugin Width to fit your template - Facebook Color Scheme (Light / Dark) - Shortcode Framework ready, to publish inside pages and posts
+Main Features: Light as a feather that turns your website facebook viral - Incredible fast loading times with html5, code totally new - Also accepts Yahoo, Hotmail and AOL accounts to post and comment - Uses new facebook api - Improved Moderation Settings - Optimized Facebook Mobile Support Added - Facebook Application Connection - Control the Number of posts to display - Control the Plugin Width to fit your template - Facebook Color Scheme (Light / Dark) - Shortcode Framework ready, to publish inside pages and posts - Automatically Replace Wordpress Native Comments
 
 Both the widget and the shortcode framework are fully mobile responsive, a must for any professional website
 
@@ -29,12 +29,12 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 * Display, Hide or Change any Widget Title
 
-* Facebook Comments Master Viral Widget:
+* Facebook Comments Master Viral Widget
 * Built-in html5 for a small system trace and fast page load times
 * Facebook Like and Share Button to boost your website visits and new users
 * Works great under any of the below widget with the Title off
 
-* Facebook Comments Master Basic Fast Loading Widget:
+* Facebook Comments Master Basic Fast Loading Widget
 * Specially designed in html5 for Fast Page Loading times it's perfect to display Facebook Comments
 * All options are on automatic settings so it's easy and fast to deploy by any wordpress administrator
 
@@ -43,16 +43,16 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 * Display, Hide or Change any Widget Title
 
-* Facebook Comments Master Viral Widget:
+* Facebook Comments Master Viral Widget
 * Built-in html5 for a small system trace and fast page load times
 * Facebook Like and Share Button to boost your website visits and new users
 * Works great under any of the below widget with the Title off
 
-* Facebook Comments Master Basic Fast Loading Widget:
+* Facebook Comments Master Basic Fast Loading Widget
 * Specially designed in html5 for Fast Page Loading times it's perfect to display Facebook Comments
 * All options are on automatic settings so it's easy and fast to deploy by any wordpress administrator
 
-* Facebook Comments Master Advanced Responsive Widget:
+* Facebook Comments Master Advanced Responsive Widget
 * "Top of the Line" Advanced Responsive Widget, perfect to display your Facebook Comments with full control over visual options and settings
 * Beautifully coded in HTML5, this widget is Fully Mobile Responsive
 * Specially suited for heavy duty professional, commercial, sales websites where Fast Page Load Times and mobile presence is a must
@@ -64,8 +64,8 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 * Facebook Mobile Optimized version Ready
 * Etc
 
-* TechGasp Shortcode Framework v3:
-* Universal Shortcode for all pages and posts, same Shortcode applies to all pages and posts. Option to Automatically add the shortcode to all pages and posts or manually add the pre-built shortcode individually per page or post. Option to automatically only show the shortcode in Posts and not Pages. Option to Automatically show the shortcode After the Title or After the Content.
+* TechGasp Shortcode Framework v3
+* Universal Shortcode for all pages and posts, same Shortcode applies to all pages and posts. Option to Automatically add the shortcode to all pages and posts or manually add the pre-built shortcode individually per page or post. Option to automatically only show the shortcode in Posts and not Pages. Option to Automatically show the shortcode After the Title or After the Content. Option to Automatically replace Wordpress Native Comments with facebook comments (The beauty of Replace WordPress Native Comments is that the plugin will use your theme default location and styling to display facebook comments in a more beautiful and integrated way. Awesome!!!)
 * Individual Shortcode for each page or post, individual customized shortcode per page or post
 * Shortcodes allow you to professionally display your plugin inside pages and posts maintaining fast page load times and excellent Google SEO
 * [Advanced Version Link](http://wordpress.techgasp.com/facebook-comments-master/)
@@ -126,6 +126,15 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 
 == Changelog ==
+
+= 4.3.7 =
+* TechGasp Awesomeness!!! new setting added, Replace Wordpress Native Comments
+* Replace Wordpress Native Comments allows automatic insertion of facebook comments in the template space reserved for wordpress native comments
+* Better integration with all templates when applying shortcodes
+* Wordpress 3.8.3 Ready!
+
+= 4.3.6 =
+* Added automatic deletion of site_transients
 
 = 4.3.5 =
 * TechGasp Plugin Framework v3 Improvements and Upgrades
