@@ -3,7 +3,7 @@ Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, facebook, comments, facebook plugin, facebook comments, wordpress comments, website comments, facebook share
 Requires at least: 3.5
 Tested up to: 3.9
-Stable tag: 4.3.8
+Stable tag: 4.3.9
 License: GPLv2 or later
 
 Facebook Comments Master is the professional integration of facebook comments into heavy duty wordpress websites.
@@ -25,7 +25,7 @@ Both the widget and the shortcode framework are fully mobile responsive, a must 
 IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 
-**LITE Version Contains:**
+**LITE Version Contains**
 
 * Display, Hide or Change any Widget Title
 
@@ -39,7 +39,7 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 * All options are on automatic settings so it's easy and fast to deploy by any wordpress administrator
 
 
-**ADVANCED Version Contains:**
+**ADVANCED Version Contains**
 
 * Display, Hide or Change any Widget Title
 
@@ -126,6 +126,14 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 
 == Changelog ==
+
+= 4.3.9 =
+* This release upgrades the Replace Wordpress Native Comments, read below for improvements and changes
+* Totally redesigned for easier user implementation
+* Activating Facebook Comments Master plugin automatically closes wordpress native comments
+* Activating Replace Wordpress Native Comments automatically re-creates comments area in templates that respect wordpress comments api
+* Small security in fix to block spam bots to nag your wordpress trying to post via code when comments were already replaced by facebook comments master:)
+* if system wide Replace Wordpress Native Comments is On, override can be done in individual posts and pages by check/uncheck "Allow Comments"
 
 = 4.3.8 =
 * Replace Wordpress Native Comments, tweaks and better theme morphing hiding native comments options
