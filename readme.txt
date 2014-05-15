@@ -2,8 +2,8 @@
 Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, facebook, comments, facebook plugin, facebook comments, wordpress comments, website comments, facebook share
 Requires at least: 3.5
-Tested up to: 3.9
-Stable tag: 4.3.9
+Tested up to: 3.9.1
+Stable tag: 4.3.9.2
 License: GPLv2 or later
 
 Facebook Comments Master is the professional integration of facebook comments into heavy duty wordpress websites.
@@ -126,6 +126,13 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 
 == Changelog ==
+
+= 4.3.9.2 =
+* Implementing New Facebook Comments API v=2.0
+* New Mobile Responsiveness settings implementation according to api v2
+
+= 4.3.9.1 =
+* More internal options to enlarge theme compatibility for Replace Wordpress Native Comments
 
 = 4.3.9 =
 * This release upgrades the Replace Wordpress Native Comments, read below for improvements and changes

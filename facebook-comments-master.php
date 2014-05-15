@@ -2,7 +2,7 @@
 /**
 Plugin Name: Facebook Comments Master
 Plugin URI: http://wordpress.techgasp.com/facebook-comments-master/
-Version: 4.3.9
+Version: 4.3.9.2
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: facebook-comments-master
@@ -28,9 +28,9 @@ if(!class_exists('facebook_comments_master')) :
 ///////DEFINE ID//////
 define('FACEBOOK_COMMENTS_MASTER_ID', 'facebook-comments-master');
 ///////DEFINE VERSION///////
-define( 'facebook_comments_master_VERSION', '4.3.9' );
+define( 'facebook_comments_master_VERSION', '4.3.9.2' );
 global $facebook_comments_master_version, $facebook_comments_master_name;
-$facebook_comments_master_version = "4.3.9"; //for other pages
+$facebook_comments_master_version = "4.3.9.2"; //for other pages
 $facebook_comments_master_name = "Facebook Comments Master"; //pretty name
 if( is_multisite() ) {
 update_site_option( 'facebook_comments_master_installed_version', $facebook_comments_master_version );

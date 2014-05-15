@@ -46,10 +46,10 @@ class facebook_comments_master_widget_basic extends WP_Widget {
 			'var js, fjs = d.getElementsByTagName(s)[0];' .
 			'if (d.getElementById(id)) return;' .
 			'js = d.createElement(s); js.id = id;' .
-			'js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";' .
+			'js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&version=v2.0";' .
 			'fjs.parentNode.insertBefore(js, fjs);' .
 			'}(document, '.$facebookcommentsspacer.'script'.$facebookcommentsspacer.', '.$facebookcommentsspacer.'facebook-jssdk'.$facebookcommentsspacer.'));</script>' .
-			'<div class="fb-comments" data-href="'.$fburicurrent.'" data-num-posts="10" data-colorscheme="light" data-mobile="auto-detect"></div>' .
+			'<div class="fb-comments" data-href="'.$fburicurrent.'" data-width="100%" data-num-posts="10" data-colorscheme="light" data-mobile="auto-detect"></div>' .
 	$after_widget;
 	}
 	//Update the widget
@@ -93,7 +93,7 @@ class facebook_comments_master_widget_basic extends WP_Widget {
 	&nbsp;
 	<b>Facebook Comments Master Website</b>
 	</p>
-	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Visit Website">Get Add-ons</a></p>
+	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.org/plugins/facebook-comments-master/" target="_blank" title="Facebook Comments Master Wordpress">RATE US *****</a></p>
 	<?php
 	}
  }
