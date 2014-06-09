@@ -14,7 +14,7 @@ Any heavy duty wordpress website needs a top of the line comment system so users
 
 Let facebook take all the load of the comments, moderation and spam (you can ultimately moderate and delete comments).
 
-But wait! the best part is that it turns your website viral because all comments are also posted in the user facebook wall referencing your website and with a thumb image. And if by any really strange chance your users do not have a facebook account? Problem solved, they can use their Yahoo, Hotmail or AOL accounts to post and comment. It's all gain, gain, gain.
+But wait! the best part is that it turns your website viral because it lets people comment on content on your site using their Facebook profile and shows this activity to their friends in news feed referencing your website and with a thumb image. And if by any really strange chance your users do not have a facebook account? Problem solved, they can use their Yahoo, Hotmail or AOL accounts to post and comment. It’s all gain, gain, gain.
 
 Main Features: Light as a feather that turns your website facebook viral - Incredible fast loading times with html5, code totally new - Also accepts Yahoo, Hotmail and AOL accounts to post and comment - Uses new facebook api - Improved Moderation Settings - Optimized Facebook Mobile Support Added - Facebook Application Connection - Control the Number of posts to display - Control the Plugin Width to fit your template - Facebook Color Scheme (Light / Dark) - Shortcode Framework ready, to publish inside pages and posts - Automatically Replace Wordpress Native Comments
 
