@@ -41,6 +41,7 @@ class facebook_comments_master_widget_viral extends WP_Widget {
 			'js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=";' .
 			'fjs.parentNode.insertBefore(js, fjs);' .
 			'}(document, '.$facebook_comments_spacer.'script'.$facebook_comments_spacer.', '.$facebook_comments_spacer.'facebook-jssdk'.$facebook_comments_spacer.'));</script>' .
+			'<style>.fb-like span{overflow:visible !important; width:450px !important; margin-right:-375px;}</style>' .
 			'<div class="fb-like" data-href="'.$facebook_comments_url.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>' .
 	$after_widget;
 	}
@@ -84,7 +85,7 @@ class facebook_comments_master_widget_viral extends WP_Widget {
 	&nbsp;
 	<b>Facebook Comments Master Website</b>
 	</p>
-	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Visit Website">Get Add-ons</a></p>
+	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.org/plugins/facebook-comments-master/" target="_blank" title="Facebook Comments Master Wordpress">RATE US *****</a></p>
 	<?php
 	}
  }
