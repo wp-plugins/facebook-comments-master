@@ -2,7 +2,7 @@
 /**
 Plugin Name: Facebook Comments Master
 Plugin URI: http://wordpress.techgasp.com/facebook-comments-master/
-Version: 4.3.9.3
+Version: 4.4.1.5
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: facebook-comments-master
@@ -25,12 +25,16 @@ License: GPL2 or later
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 if(!class_exists('facebook_comments_master')) :
+///////DEFINE DIR///////
+define( 'FACEBOOK_COMMENTS_MASTER_DIR', plugin_dir_path( __FILE__ ) );
+///////DEFINE URL///////
+define( 'FACEBOOK_COMMENTS_MASTER_URL', plugin_dir_url( __FILE__ ) );
 ///////DEFINE ID//////
 define('FACEBOOK_COMMENTS_MASTER_ID', 'facebook-comments-master');
 ///////DEFINE VERSION///////
-define( 'facebook_comments_master_VERSION', '4.3.9.3' );
+define( 'FACEBOOK_COMMENTS_MASTER_VERSION', '4.4.1.5' );
 global $facebook_comments_master_version, $facebook_comments_master_name;
-$facebook_comments_master_version = "4.3.9.3"; //for other pages
+$facebook_comments_master_version = "4.4.1.5"; //for other pages
 $facebook_comments_master_name = "Facebook Comments Master"; //pretty name
 if( is_multisite() ) {
 update_site_option( 'facebook_comments_master_installed_version', $facebook_comments_master_version );
@@ -55,11 +59,10 @@ require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-widget-v
 // HOOK WIDGET BASIC
 require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-widget-basic.php');
 
-
 class facebook_comments_master{
 //REGISTER PLUGIN
 public static function facebook_comments_master_register(){
-register_setting(FACEBOOK_COMMENTS_MASTER_ID, 'tsm_quote');
+register_activation_hook( __FILE__, array( __CLASS__, 'facebook_comments_master_activate' ) );
 }
 public static function content_with_quote($content){
 $quote = '<p>' . get_option('tsm_quote') . '</p>';
@@ -67,10 +70,15 @@ $quote = '<p>' . get_option('tsm_quote') . '</p>';
 }
 //SETTINGS LINK IN PLUGIN MANAGER
 public static function facebook_comments_master_links( $links, $file ) {
-	if ( $file == plugin_basename( dirname(__FILE__).'/facebook-comments-master.php' ) ) {
-		$links[] = '<a href="' . admin_url( 'admin.php?page=facebook-comments-master' ) . '">'.__( 'Settings' ).'</a>';
+if ( $file == plugin_basename( dirname(__FILE__).'/facebook-comments-master.php' ) ) {
+		if( is_network_admin() ){
+		$techgasp_plugin_url = network_admin_url( 'admin.php?page=facebook-comments-master' );
+		}
+		else {
+		$techgasp_plugin_url = admin_url( 'admin.php?page=facebook-comments-master' );
+		}
+	$links[] = '<a href="' . $techgasp_plugin_url . '">'.__( 'Settings' ).'</a>';
 	}
-
 	return $links;
 }
 
@@ -102,8 +110,9 @@ update_option( 'facebook_comments_master_newest_version', $r->new_version );
 }
 }
 }
-		// Advanced Updater
-
+//Remove WP Updater
+// Advanced Updater
+//Updater Label Message
 //END CLASS
 }
 if ( is_admin() ){

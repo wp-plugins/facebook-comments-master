@@ -26,9 +26,17 @@ class facebook_comments_master_widget_viral extends WP_Widget {
 	// Display the widget title
 	if ( $facebook_comments_title ){
 		if (empty ($facebook_comments_title_new)){
-		$facebook_comments_title_new = get_option('facebook_comments_master_name');
-		}
+			if(is_multisite()){
+			$facebook_comments_title_new = get_site_option('facebook_comments_master_name');
+			}
+			else{
+			$facebook_comments_title_new = get_option('facebook_comments_master_name');
+			}
 		echo $before_title . $facebook_comments_title_new . $after_title;
+		}
+		else{
+		echo $before_title . $facebook_comments_title_new . $after_title;
+		}
 	}
 	else{
 	}
@@ -85,7 +93,7 @@ class facebook_comments_master_widget_viral extends WP_Widget {
 	&nbsp;
 	<b>Facebook Comments Master Website</b>
 	</p>
-	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.org/plugins/facebook-comments-master/" target="_blank" title="Facebook Comments Master Wordpress">RATE US *****</a></p>
+	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Get Add-ons">Get Add-ons</a></p>
 	<?php
 	}
  }

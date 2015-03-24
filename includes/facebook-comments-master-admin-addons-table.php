@@ -39,7 +39,7 @@ class facebook_comments_master_admin_addons_table extends WP_List_Table {
 		</tr>
 		<tr class="alternate">
 			<td class="column-columnname" width="300" style="vertical-align:middle"><img src="<?php echo plugins_url('../images/techgasp-facebookcommentsmaster-admin-addons-widget-advanced.png', __FILE__); ?>" alt="<?php echo get_option('facebook_comments_master_name'); ?>" align="left" width="300px" height="139px" style="padding:5px;"/></td>
-			<td class="column-columnname"style="vertical-align:middle"><h3>Facebook Comments Master Advanced Responsive Widget</h3><p>This is the "top of the line" Facebook Comments Widget specially designed for heavy duty professional wordpress websites where fast page load times, stability and perfect Google SEO is a must.</p><p>Coded in html5 it's packed with display options and is <b>Fully Mobile Responsive</b>.</p><p>Check Add-ons Page.</p></td>
+			<td class="column-columnname"style="vertical-align:middle"><h3>Facebook Comments Master Advanced Responsive Widget</h3><p>This is the "top of the line" Facebook Comments Widget specially designed for heavy duty professional wordpress websites where fast page load times, stability and perfect Google SEO is a must.</p><p>Coded in html5 it's packed with display options and is <b>Fully Mobile Responsive</b>.</p></td>
 			<td class="column-columnname" style="vertical-align:middle"><img src="<?php echo plugins_url('../images/techgasp-check-no.png', __FILE__); ?>" alt="<?php echo get_option('facebook_comments_master_name'); ?>" align="left" width="200px" height="121px" style="padding:5px;"/></td>
 		</tr>
 		<tr>

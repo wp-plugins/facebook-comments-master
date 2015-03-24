@@ -10,8 +10,10 @@ register_widget( 'facebook_comments_master_widget_basic' );
 add_action( 'wp_enqueue_scripts', 'facebook_comments_master_wbcss' );
 //load css for shortcode
 function facebook_comments_master_wbcss() {
+if ( is_active_widget( false, false, 'facebook_comments_master_widget_basic', true ) ) {
 	wp_register_style( 'facebook_comments_master_wbcss', plugins_url('facebook-comments-master-style.css', __FILE__) );
 	wp_enqueue_style( 'facebook_comments_master_wbcss' );
+}
 }
 
 class facebook_comments_master_widget_basic extends WP_Widget {
@@ -34,9 +36,17 @@ class facebook_comments_master_widget_basic extends WP_Widget {
 	// Display the widget title
 	if ( $facebook_comments_title ){
 		if (empty ($facebook_comments_title_new)){
-		$facebook_comments_title_new = get_option('facebook_comments_master_name');
-		}
+			if(is_multisite()){
+			$facebook_comments_title_new = get_site_option('facebook_comments_master_name');
+			}
+			else{
+			$facebook_comments_title_new = get_option('facebook_comments_master_name');
+			}
 		echo $before_title . $facebook_comments_title_new . $after_title;
+		}
+		else{
+		echo $before_title . $facebook_comments_title_new . $after_title;
+		}
 	}
 	else{
 	}
@@ -49,7 +59,7 @@ class facebook_comments_master_widget_basic extends WP_Widget {
 			'js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&version=v2.0";' .
 			'fjs.parentNode.insertBefore(js, fjs);' .
 			'}(document, '.$facebookcommentsspacer.'script'.$facebookcommentsspacer.', '.$facebookcommentsspacer.'facebook-jssdk'.$facebookcommentsspacer.'));</script>' .
-			'<div class="fb-comments" data-href="'.$fburicurrent.'" data-width="100%" data-num-posts="10" data-colorscheme="light" data-mobile="auto-detect"></div>' .
+			'<div class="fb-comments" data-href="'.$fburicurrent.'" data-width="100%" data-num-posts="10" data-colorscheme="light" ></div>' .
 	$after_widget;
 	}
 	//Update the widget
@@ -93,7 +103,7 @@ class facebook_comments_master_widget_basic extends WP_Widget {
 	&nbsp;
 	<b>Facebook Comments Master Website</b>
 	</p>
-	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.org/plugins/facebook-comments-master/" target="_blank" title="Facebook Comments Master Wordpress">RATE US *****</a></p>
+	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Get Add-ons">Get Add-ons</a></p>
 	<?php
 	}
  }

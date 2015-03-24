@@ -8,7 +8,7 @@ class facebook_comments_master_admin_updater_version_table extends WP_List_Table
 	 * @return string, echo the markup of the rows
 	 */
 function display() {
-global $vine_plugin_slug;
+global $facebook_comments_master_plugin_slug;
 ?>
 <table class="widefat fixed" cellspacing="0">
 	<thead>
@@ -32,8 +32,8 @@ if(get_site_option( 'facebook_comments_master_installed_version')  == get_site_o
 	echo '</td>';
 }
 else{
-$vine_plugin_slug = 'facebook-comments-master/facebook-comments-master.php';
-	echo '<a class="button-primary" href="'.wp_nonce_url( self_admin_url('update.php?action=upgrade-plugin&plugin=') . $vine_plugin_slug, 'upgrade-plugin_' . $vine_plugin_slug) .'" title="Update">Update</a></td>';
+$facebook_comments_master_plugin_slug = 'facebook-comments-master/facebook-comments-master.php';
+	echo '<a class="button-primary" href="'.wp_nonce_url( self_admin_url('update.php?action=upgrade-plugin&plugin=') . $facebook_comments_master_plugin_slug, 'upgrade-plugin_' . $facebook_comments_master_plugin_slug) .'" title="Update">Update</a></td>';
 }
 ?>
 			</th>
@@ -42,7 +42,16 @@ $vine_plugin_slug = 'facebook-comments-master/facebook-comments-master.php';
 
 	<tbody>
 		<tr class="alternate">
-			<td class="column-columnname" width="350" style="vertical-align:middle"><h2><b><?php echo get_option( 'facebook_comments_master_name' ); ?></b></h2></td>
+			<td class="column-columnname" width="350" style="vertical-align:middle"><h2><b>
+<?php
+if( is_multisite() ) {
+echo get_site_option( 'facebook_comments_master_name' );
+}
+else{
+echo get_option( 'facebook_comments_master_name' );
+}
+?>
+			</b></h2></td>
 			<td class="column-columnname" style="vertical-align:middle">
 <?php
 if( is_multisite() ) {
@@ -55,9 +64,12 @@ echo '<h3>Version '.get_option( 'facebook_comments_master_installed_version' ).'
 		</td>
 			<td class="column-columnname" style="vertical-align:middle">
 <?php
-
+if( is_multisite() ) {
+echo '<h3>Version '.get_site_option('facebook_comments_master_newest_version').'</h3>';
+}
+else{
 echo '<h3>Version '.get_option('facebook_comments_master_newest_version').'</h3>';
-
+}
 ?>
 			</td>
 			<td class="column-columnname" style="vertical-align:middle">
