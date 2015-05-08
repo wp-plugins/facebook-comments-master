@@ -2,7 +2,7 @@
 Contributors: TechGasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, facebook, comments, facebook plugin, facebook comments, wordpress comments, website comments, facebook share
 Requires at least: 3.5
-Tested up to: 4.2.1
+Tested up to: 4.2.2
 Stable tag: 4.4.1.6
 License: GPLv2 or later
 
