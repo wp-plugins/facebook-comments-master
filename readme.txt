@@ -3,7 +3,7 @@ Contributors: TechGasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, facebook, comments, facebook plugin, facebook comments, wordpress comments, website comments, facebook share
 Requires at least: 3.5
 Tested up to: 4.2.2
-Stable tag: 4.4.1.6
+Stable tag: 4.4.1.7
 License: GPLv2 or later
 
 Facebook Comments Master is the professional integration of facebook comments into heavy duty wordpress websites.
@@ -16,7 +16,7 @@ Let facebook take all the load of the comments, moderation and spam (you can ult
 
 But wait! the best part is that it turns your website viral because it lets people comment on content on your site using their Facebook profile and shows this activity to their friends in news feed referencing your website and with a thumb image. And if by any really strange chance your users do not have a facebook account? Problem solved, they can use their Yahoo, Hotmail or AOL accounts to post and comment. It’s all gain, gain, gain.
 
-Main Features: Light as a feather that turns your website facebook viral - Incredible fast loading times with html5, code totally new - Also accepts Yahoo, Hotmail and AOL accounts to post and comment - Uses new facebook api - Improved Moderation Settings - Optimized Facebook Mobile Support Added - Facebook Application Connection - Control the Number of posts to display - Control the Plugin Width to fit your template - Facebook Color Scheme (Light / Dark) - Shortcode Framework ready, to publish inside pages and posts - Automatically Replace Wordpress Native Comments
+Main Features: Light as a feather that turns your website facebook viral - Incredible fast loading times with html5, code totally new - Also accepts Yahoo, Hotmail and AOL accounts to post and comment - Uses new facebook api - Improved Moderation Settings - Optimized Facebook Mobile Support Added - Facebook Application Connection - Control the Number of posts to display - Override the Facebook Language to match your country - Auto Plugin Width to always fit your template - Facebook Color Scheme (Light / Dark) - Shortcode Framework ready, to publish inside pages and posts - Automatically Replace Wordpress Native Comments
 
 Both the widget and the shortcode framework are fully mobile responsive, a must for any professional website
 
@@ -126,6 +126,12 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 
 == Changelog ==
+
+= 4.4.1.7 =
+* Tweaking Settings page for easier usage
+* Adding language override to Settings page. Easy way for users to change the default Facebook English language
+* Adding new Facebook API
+* Overhaul and code clean-up
 
 = 4.4.1.6 =
 * Wordpress 4.2 ready

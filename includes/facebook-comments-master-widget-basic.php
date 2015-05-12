@@ -50,16 +50,56 @@ class facebook_comments_master_widget_basic extends WP_Widget {
 	}
 	else{
 	}
+	//Prepare APP ID
+	if(is_multisite()){
+		if (get_site_option('facebook_comments_master_system_wide_app') == "true" ){
+			$facebook_comments_master_wb_app_create = "&appId=".get_site_option('facebook_comments_master_system_wide_app_id');
+		}
+		else{
+			$facebook_comments_master_wb_app_create = '';
+		}
+	}
+	else{
+		if (get_option('facebook_comments_master_system_wide_app') == "true" ){
+			$facebook_comments_master_wb_app_create = "&appId=".get_option('facebook_comments_master_system_wide_app_id');
+		}
+		else{
+			$facebook_comments_master_wb_app_create = '';
+		}
+	}
+	//Prepare Language
+	if(is_multisite()){
+		if (get_site_option('facebook_comments_master_system_wide_lang') == "true" ){
+			$facebook_comments_master_wb_lang_create = get_site_option('facebook_comments_master_system_wide_lang_set');
+				if(empty($facebook_comments_master_wb_lang_create)){
+					$facebook_comments_master_wb_lang_create = "en_US";
+				}
+		}
+		else{
+			$facebook_comments_master_wb_lang_create = "en_US";
+		}
+	}
+	else{
+		if (get_option('facebook_comments_master_system_wide_lang') == "true" ){
+			$facebook_comments_master_wb_lang_create = get_option('facebook_comments_master_system_wide_lang_set');
+				if(empty($facebook_comments_master_wb_lang_create)){
+					$facebook_comments_master_wb_lang_create = "en_US";
+				}
+		}
+		else{
+			$facebook_comments_master_wb_lang_create = "en_US";
+		}
+	}
 	//Display Faceboook Comments
 		echo '<div id="fb-root"></div>' .
 			'<script>(function(d, s, id) {' .
 			'var js, fjs = d.getElementsByTagName(s)[0];' .
 			'if (d.getElementById(id)) return;' .
 			'js = d.createElement(s); js.id = id;' .
-			'js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&version=v2.0";' .
+			'js.src ="//connect.facebook.net/'.$facebook_comments_master_wb_lang_create.'/sdk.js#xfbml=1&version=v2.3'.$facebook_comments_master_wb_app_create.'";' .
 			'fjs.parentNode.insertBefore(js, fjs);' .
 			'}(document, '.$facebookcommentsspacer.'script'.$facebookcommentsspacer.', '.$facebookcommentsspacer.'facebook-jssdk'.$facebookcommentsspacer.'));</script>' .
-			'<div class="fb-comments" data-href="'.$fburicurrent.'" data-width="100%" data-num-posts="10" data-colorscheme="light" ></div>' .
+			'<div class="fb-comments" data-href="'.$fburicurrent.'" data-width="100%" data-numposts="10" data-colorscheme="light" ></div>' .
 	$after_widget;
 	}
 	//Update the widget
@@ -89,21 +129,28 @@ class facebook_comments_master_widget_basic extends WP_Widget {
 	<input id="<?php echo $this->get_field_id( 'facebook_comments_title_new' ); ?>" name="<?php echo $this->get_field_name( 'facebook_comments_title_new' ); ?>" value="<?php echo $instance['facebook_comments_title_new']; ?>" style="width:auto;" />
 	</p>
 <div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+	<br>
 	<div class="description"><b>TechGasp Fast Deployment</b></div>
-	<br>
 	<div class="description">All settings are "on" auto mode for a fast and easy use. This widget is built-in html5 with minimal clean code for fast page load times and perfect Google SEO. Just publish it anywhere in your template to render Facebook Comments.</div>
-	<br>
 	<div class="description">If you want to have full control over display options, use the <b>Facebook Comments Master Advanced Responsive Widget.</b></div>
-	<br>
 	<div class="description">If you want to publish Facebook Comments inside pages and posts, use the <b>Universal or Individual TechGasp Shortcode Framework.</b></div>
 	<br>
+<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+	<br>
+	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
+	&nbsp;
+	<b>Moderation & Language Tools</b>
+	</p>
+	<p>
+	<div class="description">Visit Facebook Comments Master Settings Page.</div>
+	</p>
 <div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
 	<p>
 	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; width:16px; vertical-align:middle;" />
 	&nbsp;
 	<b>Facebook Comments Master Website</b>
 	</p>
-	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Get Add-ons">Get Add-ons</a></p>
+	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.org/plugins/facebook-comments-master/" target="_blank" title="Facebook Comments Master Wordpress">RATE US *****</a></p>
 	<?php
 	}
  }

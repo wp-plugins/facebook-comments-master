@@ -40,13 +40,53 @@ class facebook_comments_master_widget_viral extends WP_Widget {
 	}
 	else{
 	}
+	//Prepare APP ID
+	if(is_multisite()){
+		if (get_site_option('facebook_comments_master_system_wide_app') == "true" ){
+			$facebook_comments_master_wv_app_create = "&appId=".get_site_option('facebook_comments_master_system_wide_app_id');
+		}
+		else{
+			$facebook_comments_master_wv_app_create = '';
+		}
+	}
+	else{
+		if (get_option('facebook_comments_master_system_wide_app') == "true" ){
+			$facebook_comments_master_wv_app_create = "&appId=".get_option('facebook_comments_master_system_wide_app_id');
+		}
+		else{
+			$facebook_comments_master_wv_app_create = '';
+		}
+	}
+	//Prepare Language
+	if(is_multisite()){
+		if (get_site_option('facebook_comments_master_system_wide_lang') == "true" ){
+			$facebook_comments_master_wv_lang_create = get_site_option('facebook_comments_master_system_wide_lang_set');
+				if(empty($facebook_comments_master_wv_lang_create)){
+					$facebook_comments_master_wv_lang_create = "en_US";
+				}
+		}
+		else{
+			$facebook_comments_master_wv_lang_create = "en_US";
+		}
+	}
+	else{
+		if (get_option('facebook_comments_master_system_wide_lang') == "true" ){
+			$facebook_comments_master_wv_lang_create = get_option('facebook_comments_master_system_wide_lang_set');
+				if(empty($facebook_comments_master_wv_lang_create)){
+					$facebook_comments_master_wv_lang_create = "en_US";
+				}
+		}
+		else{
+			$facebook_comments_master_wv_lang_create = "en_US";
+		}
+	}
 	//Display Viral Buttons
 		echo '<div id="fb-root"></div>' .
 			'<script>(function(d, s, id) {' .
 			'var js, fjs = d.getElementsByTagName(s)[0];' .
 			'if (d.getElementById(id)) return;' .
 			'js = d.createElement(s); js.id = id;' .
-			'js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=";' .
+			'js.src = "//connect.facebook.net/'.$facebook_comments_master_wv_lang_create.'/sdk.js#xfbml=1&version=v2.3'.$facebook_comments_master_wv_app_create.'";' .
 			'fjs.parentNode.insertBefore(js, fjs);' .
 			'}(document, '.$facebook_comments_spacer.'script'.$facebook_comments_spacer.', '.$facebook_comments_spacer.'facebook-jssdk'.$facebook_comments_spacer.'));</script>' .
 			'<style>.fb-like span{overflow:visible !important; width:450px !important; margin-right:-375px;}</style>' .
@@ -93,7 +133,7 @@ class facebook_comments_master_widget_viral extends WP_Widget {
 	&nbsp;
 	<b>Facebook Comments Master Website</b>
 	</p>
-	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Get Add-ons">Get Add-ons</a></p>
+	<p><a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master/" target="_blank" title="Facebook Comments Master Info Page">Info Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/facebook-comments-master-documentation/" target="_blank" title="Soundcloud Master Documentation">Documentation</a> <a class="button-primary" href="http://wordpress.org/plugins/facebook-comments-master/" target="_blank" title="Facebook Comments Master Wordpress">RATE US *****</a></p>
 	<?php
 	}
  }

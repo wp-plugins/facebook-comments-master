@@ -2,7 +2,7 @@
 /**
 Plugin Name: Facebook Comments Master
 Plugin URI: http://wordpress.techgasp.com/facebook-comments-master/
-Version: 4.4.1.6
+Version: 4.4.1.7
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: facebook-comments-master
@@ -32,9 +32,9 @@ define( 'FACEBOOK_COMMENTS_MASTER_URL', plugin_dir_url( __FILE__ ) );
 ///////DEFINE ID//////
 define('FACEBOOK_COMMENTS_MASTER_ID', 'facebook-comments-master');
 ///////DEFINE VERSION///////
-define( 'FACEBOOK_COMMENTS_MASTER_VERSION', '4.4.1.6' );
+define( 'FACEBOOK_COMMENTS_MASTER_VERSION', '4.4.1.7' );
 global $facebook_comments_master_version, $facebook_comments_master_name;
-$facebook_comments_master_version = "4.4.1.6"; //for other pages
+$facebook_comments_master_version = "4.4.1.7"; //for other pages
 $facebook_comments_master_name = "Facebook Comments Master"; //pretty name
 if( is_multisite() ) {
 update_site_option( 'facebook_comments_master_installed_version', $facebook_comments_master_version );
@@ -46,6 +46,10 @@ update_option( 'facebook_comments_master_name', $facebook_comments_master_name )
 }
 // HOOK ADMIN
 require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-admin.php');
+// HOOK ADMIN SETTINGS PAGE » ONLY ADVANCED
+require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-admin-settings-wide.php');
+// HOOK FRONT SETTINGS WIDE » ONLY ADVANCED
+require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-settings-wide.php');
 // HOOK ADMIN IN & UN SHORTCODE
 require_once( dirname( __FILE__ ) . '/includes/facebook-comments-master-admin-shortcodes.php');
 // HOOK ADMIN WIDGETS
