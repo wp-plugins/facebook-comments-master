@@ -118,7 +118,7 @@ class facebook_comments_master_widget_basic extends WP_Widget {
 		<br>
 		<b>Check the buttons to be displayed:</b>
 	<p>
-	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
+	<img src="<?php echo plugins_url('images/techgasp-minilogo-16.png', dirname(__FILE__)); ?>" style="float:left; height:16px; vertical-align:middle;" />
 	&nbsp;
 	<input type="checkbox" <?php checked( (bool) $instance['facebook_comments_title'], true ); ?> id="<?php echo $this->get_field_id( 'facebook_comments_title' ); ?>" name="<?php echo $this->get_field_name( 'facebook_comments_title' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'facebook_comments_title' ); ?>"><b><?php _e('Display Widget Title', 'facebook_comments_master'); ?></b></label></br>
@@ -128,25 +128,25 @@ class facebook_comments_master_widget_basic extends WP_Widget {
 	<br>
 	<input id="<?php echo $this->get_field_id( 'facebook_comments_title_new' ); ?>" name="<?php echo $this->get_field_name( 'facebook_comments_title_new' ); ?>" value="<?php echo $instance['facebook_comments_title_new']; ?>" style="width:auto;" />
 	</p>
-<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+<div style="background: url(<?php echo plugins_url('images/techgasp-hr.png', dirname(__FILE__)); ?>) repeat-x; height: 10px"></div>
 	<br>
 	<div class="description"><b>TechGasp Fast Deployment</b></div>
 	<div class="description">All settings are "on" auto mode for a fast and easy use. This widget is built-in html5 with minimal clean code for fast page load times and perfect Google SEO. Just publish it anywhere in your template to render Facebook Comments.</div>
 	<div class="description">If you want to have full control over display options, use the <b>Facebook Comments Master Advanced Responsive Widget.</b></div>
 	<div class="description">If you want to publish Facebook Comments inside pages and posts, use the <b>Universal or Individual TechGasp Shortcode Framework.</b></div>
 	<br>
-<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+<div style="background: url(<?php echo plugins_url('images/techgasp-hr.png', dirname(__FILE__)); ?>) repeat-x; height: 10px"></div>
 	<br>
-	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
+	<img src="<?php echo plugins_url('images/techgasp-minilogo-16.png', dirname(__FILE__)); ?>" style="float:left; height:16px; vertical-align:middle;" />
 	&nbsp;
 	<b>Moderation & Language Tools</b>
 	</p>
 	<p>
 	<div class="description">Visit Facebook Comments Master Settings Page.</div>
 	</p>
-<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+<div style="background: url(<?php echo plugins_url('images/techgasp-hr.png', dirname(__FILE__)); ?>) repeat-x; height: 10px"></div>
 	<p>
-	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; width:16px; vertical-align:middle;" />
+	<img src="<?php echo plugins_url('images/techgasp-minilogo-16.png', dirname(__FILE__)); ?>" style="float:left; width:16px; vertical-align:middle;" />
 	&nbsp;
 	<b>Facebook Comments Master Website</b>
 	</p>

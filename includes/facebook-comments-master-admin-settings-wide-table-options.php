@@ -53,7 +53,7 @@ update_option('facebook_comments_master_system_wide_lang_set', '' );
 	<thead>
 		<tr>
 			<th id="cb" class="manage-column column-cb check-column" scope="col" style="vertical-align:middle"><input type="checkbox"></th>
-			<th id="columnname" class="manage-column column-columnname" scope="col" width="250"><legend><h3><img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" /><?php _e('&nbsp;System Wide Settings', 'facebook_comments_master'); ?></h3></legend></th>
+			<th id="columnname" class="manage-column column-columnname" scope="col" width="250"><legend><h3><img src="<?php echo plugins_url('images/techgasp-minilogo-16.png', dirname(__FILE__)); ?>" style="float:left; height:16px; vertical-align:middle;" /><?php _e('&nbsp;System Wide Settings', 'facebook_comments_master'); ?></h3></legend></th>
 			<th id="columnname" class="manage-column column-columnname" scope="col"></th>
 		</tr>
 	</thead>
