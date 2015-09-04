@@ -20,7 +20,7 @@ class facebook_comments_master_widget_basic extends WP_Widget {
 	function facebook_comments_master_widget_basic() {
 	$widget_ops = array( 'classname' => 'FB Comments Master Basic', 'description' => __('FB Comments Master Basic Fast Loading Widget, is built-in Html5 for professional, easy and fast Facebook Comments deployment. ', 'facebook_comments_master') );
 	$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'facebook_comments_master_widget_basic' );
-	$this->WP_Widget( 'facebook_comments_master_widget_basic', __('FB Comments Master Basic', 'facebook_comments_master'), $widget_ops, $control_ops );
+	parent::__construct( 'facebook_comments_master_widget_basic', __('FB Comments Master Basic', 'facebook_comments_master'), $widget_ops, $control_ops );
 	}
 
 	function widget( $args, $instance ) {

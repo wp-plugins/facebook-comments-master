@@ -11,7 +11,7 @@ class facebook_comments_master_widget_viral extends WP_Widget {
 	function facebook_comments_master_widget_viral() {
 	$widget_ops = array( 'classname' => 'FB Comments Master Viral', 'description' => __('FB Comments Master Viral Widget is packed with html5 Facebook Like and Share button. It will make your wordpress grow with new visits and users. ', 'facebook_comments_master') );
 	$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'facebook_comments_master_widget_viral' );
-	$this->WP_Widget( 'facebook_comments_master_widget_viral', __('FB Comments Master Viral', 'facebook_comments_master'), $widget_ops, $control_ops );
+	parent::__construct( 'facebook_comments_master_widget_viral', __('FB Comments Master Viral', 'facebook_comments_master'), $widget_ops, $control_ops );
 	}
 
 	function widget( $args, $instance ) {
